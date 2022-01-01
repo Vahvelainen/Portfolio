@@ -1,0 +1,39 @@
+body {
+  --nav-width: 200px;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+}
+
+.nav {
+  width: 100vw;
+  height: 4em;
+  padding: 2em 1em 0em;
+  background: #222222;
+}
+
+.nav__link {
+  display: inline;
+  padding: 1em 18px;
+  text-decoration: none;
+  color: #eeeeee;
+  font-weight: 500;
+}
+
+.nav__link:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#app {
+  margin: 2em;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+a {
+  color: #009579;
+}
+
+footer {
+  background-color: bisque;
+}

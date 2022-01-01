@@ -3,14 +3,14 @@ import AbstractView from "./AbstractView.js";
 export default class extends AbstractView {
   constructor() {
     super();
-    this.setTitle("Leevi Vahvelainen Portfolio");
+    this.setTitle("Story of Leevi Vahvelainen");
   }
 
   async getHtml() {
     return `
-      <h1>Welcome to my portfolio ::)</h1>
+      <h1>This is my life story</h1>
       <p>
-        This is going to be awesome
+        Don't miss a word
       </p>
     `;
   }
