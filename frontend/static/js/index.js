@@ -3,11 +3,6 @@ import Work from "./views/Work.js";
 import Bio from "./views/Bio.js";
 import History from "./views/History.js";
 
-const navigateTo = url => {
-  history.pushState(null, null, url);
-  router();
-};
-
 const router = async () => {
   const routes = [
     { path: "/", view: Dashboard },
@@ -15,7 +10,7 @@ const router = async () => {
     { path: "/bio", view: Bio },
     { path: "/history", view: History }
   ];
-
+  
   // Test each route for potential match
   const potentialMatches = routes.map( route => {
     return {
@@ -23,9 +18,9 @@ const router = async () => {
       isMatch: location.pathname === route.path
     };
   });
-
+  
   let match = potentialMatches.find(potentialMatch => potentialMatch.isMatch);
-
+  
   //Default to dashboard if no match
   if (!match) {
     match = {
@@ -33,12 +28,18 @@ const router = async () => {
       isMatch: true
     };
   };
-
+  
   const view = new match.route.view();
-
+  
   //Load view content
   document.querySelector("#app").innerHTML = await view.getHtml();
+  
+};
 
+//Browser history navigation
+const navigateTo = url => {
+  history.pushState(null, null, url);
+  router();
 };
 
 window.addEventListener("popstate", router);
