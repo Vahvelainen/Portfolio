@@ -3,6 +3,7 @@ body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
   font-size: 18px;
+  min-height: 100%;
 }
 
 .nav {
@@ -28,6 +29,7 @@ body {
   margin: 2em;
   line-height: 1.5;
   font-weight: 500;
+  min-height: 60vh;
 }
 
 a {
@@ -35,5 +37,7 @@ a {
 }
 
 footer {
+  padding-left: calc( 50vw - 460px );
   background-color: bisque;
+  box-shadow: 0 50vh 0 50vh bisque;
 }
