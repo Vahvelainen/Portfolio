@@ -1,9 +1,16 @@
+import Dashboard from "./views/Dashboard.js";
+
+const navigateTo = url => {
+  history.pushState(null, null, url);
+  router();
+};
+
 const router = async () => {
   const routes = [
-    { path: "/", view: () => console.log("Viewing Dashboard") },
-    { path: "/work", view: () => console.log("Viewing Work") },
-    { path: "/bio", view: () => console.log("Viewing Bio") },
-    { path: "/history", view: () => console.log("Viewing History") }
+    { path: "/", view: Dashboard },
+    //{ path: "/work", view: () => console.log("Viewing Work") },
+    //{ path: "/bio", view: () => console.log("Viewing Bio") },
+    //{ path: "/history", view: () => console.log("Viewing History") }
   ];
 
   // Test each route for potential match
@@ -24,9 +31,22 @@ const router = async () => {
     };
   };
 
-  match.route.view();
+  const view = new match.route.view();
+
+  //Load view content
+  document.querySelector("#app").innerHTML = await view.getHtml();
+
 };
 
+window.addEventListener("popstate", router);
+
 document.addEventListener("DOMContentLoaded", () => {
+  document.body.addEventListener("click", e => {
+    if (e.target.matches("[data-link]")) {
+      e.preventDefault();
+      navigateTo(e.target.href);
+    }
+  });
+
   router();
 });
