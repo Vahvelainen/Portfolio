@@ -36,6 +36,16 @@ a {
   color: #009579;
 }
 
+p {
+  max-width: 620px;
+}
+
+embed {
+  height: 20em;
+  width: 20em;
+  object-fit: cover;
+}
+
 footer {
   padding-left: calc( 50vw - 460px );
   background-color: bisque;

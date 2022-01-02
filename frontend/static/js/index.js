@@ -41,17 +41,41 @@ const router = async () => {
 //Not sure if want to keep this here 
 const render = () => {
   includeHTML();
-  //future reder stuff here
+  loadArticles();
+  //future render stuff here
 }
 
 const includeHTML = () => {
-  var elmts = $("[include-html]")
-  elmts.each(function() {
+  var elmnts = $("[include-html]")
+  elmnts.each(function() {
     $(this).load($(this).attr("include-html"), function() {
-      includeHTML();
+      render();
     });
   });
-  elmts.removeAttr("include-html");
+  elmnts.removeAttr("include-html");
+};
+
+const loadArticles = () => {
+  var elmnts = $("[load-article]")
+  elmnts.each(function () {
+    var elmnt = $(this);
+    $.get(elmnt.attr("load-article"), function(data) {
+
+      var mediaEmbed = $("<embed></embed>").attr("src", data.media); 
+      var textDivider = $("<div></div>");
+      var title = $("<h4></h4>").text(data.title);
+      textDivider.append(title);
+
+      data.paragraphs.forEach(function (item) {
+        var paragraph = $("<p></p>").text(item);
+        textDivider.append(paragraph);
+      });
+
+      elmnt.append(mediaEmbed, textDivider);
+
+    });
+  });
+  elmnts.removeAttr("load-article");
 };
 
 //Browser history navigation
