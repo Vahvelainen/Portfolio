@@ -45,10 +45,14 @@ const render = () => {
 }
 
 const includeHTML = () => {
- $("[include-html]").each(function() {
-  $(this).load($(this).attr("include-html"));
- });
-}
+  var elmts = $("[include-html]")
+  elmts.each(function() {
+    $(this).load($(this).attr("include-html"), function() {
+      includeHTML();
+    });
+  });
+  elmts.removeAttr("include-html");
+};
 
 //Browser history navigation
 const navigateTo = url => {
