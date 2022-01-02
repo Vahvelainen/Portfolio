@@ -7,11 +7,6 @@ export default class extends AbstractView {
   }
 
   async getHtml() {
-    return `
-      <h1>Here is everything I have done before</h1>
-      <p>
-        It won't be that important
-      </p>
-    `;
+    return "/static/views/History.html";
   }
 }

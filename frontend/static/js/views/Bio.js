@@ -7,11 +7,6 @@ export default class extends AbstractView {
   }
 
   async getHtml() {
-    return `
-      <h1>This is my life story</h1>
-      <p>
-        Don't miss a word
-      </p>
-    `;
+    return "/static/views/Bio.html";
   }
 }

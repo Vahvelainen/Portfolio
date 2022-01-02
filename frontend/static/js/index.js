@@ -31,10 +31,24 @@ const router = async () => {
   
   const view = new match.route.view();
   
-  //Load view content
-  document.querySelector("#app").innerHTML = await view.getHtml();
-  
+  //Load & render content
+  $("#app").load(await view.getHtml(), function() {
+    render();
+  });
+
 };
+
+//Not sure if want to keep this here 
+const render = () => {
+  includeHTML();
+  //future reder stuff here
+}
+
+const includeHTML = () => {
+ $("[include-html]").each(function() {
+  $(this).load($(this).attr("include-html"));
+ });
+}
 
 //Browser history navigation
 const navigateTo = url => {
