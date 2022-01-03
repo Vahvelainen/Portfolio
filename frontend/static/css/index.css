@@ -6,7 +6,7 @@ body {
   min-height: 100%;
 }
 
-.nav {
+nav {
   width: 100vw;
   height: 4em;
   padding: 2em 1em 0em;

@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leevi Vahvelainen Portfolio</title>
   <link rel="stylesheet" href="/static/css/index.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
-
-  <nav class="nav">
-    <a href="/" class="nav__link" data-link>Dashboard</a>
-    <a href="/work" class="nav__link" data-link>Work</a>
-    <a href="/bio" class="nav__link" data-link>Bio</a>
-    <a href="/history" class="nav__link" data-link>History</a>
-    <a href="https://www.linkedin.com/in/vahvelainen/"><img alt="Logo" src="/assets/link_facebook-ab4505cc64ed11e4345d05b20e1b95189152b00067d7490d18e8ee7df3dbf2e3.svg"></a>
-  </nav>
-
   <noscript>If youd had javascript enabled, you could access Leevi's portfolio. But you don't ¯\_(ツ)_/¯</noscript>
+
+  <nav include-html="/static/nav.html"></nav>
   <div id="app"></div>
+  <footer include-html="/static/footer.html"></footer>
+
   <script type="module" src="/static/js/index.js"></script>
-  <footer>
-    <p>Thank you for visiting</p>
-    <p class="contact">leevi.vahvelainen[at]gmail.com</p>
-  </footer>
 </body>
 </html>
