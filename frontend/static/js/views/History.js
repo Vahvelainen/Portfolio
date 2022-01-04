@@ -4,10 +4,10 @@ export default class extends AbstractView {
   constructor() {
     super();
     this.setTitle("Past life of Leevi Vahvelainen");
-    $("#app").attr('class', 'history');
   }
-
+  
   async getHtml() {
+    $("#app").attr('class', 'history');
     return "/static/views/History.html";
   }
 }
