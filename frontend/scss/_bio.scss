@@ -1,9 +1,17 @@
 .bio {
   display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: wheat;
+  padding-top: 8em;
+  padding-bottom: 10em;
   img {
-    max-height: 20em;
-    max-width: 40%;
+    width: 20%;
+    min-width: 10em;
     object-fit: contain;
+    margin-right: 4em;
+  }
+  div {
+    max-width: 480px;
   }
 }

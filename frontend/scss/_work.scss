@@ -1,8 +1,15 @@
 .work {
   display: flex;
   flex-wrap: wrap;
+  background-color: rgb(245, 245, 245);
   .work-intro {
+    text-align: center;
+    padding-top: 4em;
+    padding-bottom: 2em;
     width: 100%;
+    p {
+      max-width: unset;
+    }
   }
   article {
     position: relative;
@@ -14,17 +21,19 @@
       object-fit: cover;
     }
     div {
-      $padding-top: 2em;
-      padding-top: $padding-top;
-      height: calc(100% - $padding-top);
-      display: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       opacity: 0;
-      position: absolute;
       position: absolute;
       top: 0;
       left: 0;
       color: white;
       text-align: center;
+      height: 100%;
+      padding-right: 2em;
+      padding-left: 2em;
     }
     div:hover {
       background-color: rgba(0, 0, 0, 0.40);

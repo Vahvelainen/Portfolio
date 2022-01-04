@@ -8,6 +8,10 @@ main.dashboard{
     text-align: center;
     flex-direction: column;
     color: white;
-    padding: 3em 0;
+    padding-top: 8em;
+    padding-bottom: 8em;
+    p {
+      max-width: 480px;
+    }
   }
 }
