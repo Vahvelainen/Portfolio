@@ -42,6 +42,7 @@ const router = async () => {
 const render = () => {
   includeHTML();
   loadArticles();
+  setSquare();
   //future render stuff here
 }
 
@@ -76,6 +77,14 @@ const loadArticles = () => {
     });
   });
   elmnts.removeAttr("load-article");
+};
+
+window.addEventListener('resize', setSquare);
+
+function setSquare() {
+  $(".square").each( function () {
+    $(this).height($(this).width());
+  });
 };
 
 //Browser history navigation

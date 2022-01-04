@@ -1,0 +1,35 @@
+.work {
+  display: flex;
+  flex-wrap: wrap;
+  .work-intro {
+    width: 100%;
+  }
+  article {
+    position: relative;
+    width: calc(100%/3);
+    overflow: hidden;
+    embed {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    div {
+      $padding-top: 2em;
+      padding-top: $padding-top;
+      height: calc(100% - $padding-top);
+      display: hidden;
+      opacity: 0;
+      position: absolute;
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: white;
+      text-align: center;
+    }
+    div:hover {
+      background-color: rgba(0, 0, 0, 0.40);
+      transition: background-color 100ms linear;
+      opacity: 1;
+    }
+  }
+}

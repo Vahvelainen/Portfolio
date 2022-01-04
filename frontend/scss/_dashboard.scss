@@ -1,0 +1,13 @@
+main.dashboard{
+  .intro {
+    background-image: url('/static/media/cover.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    padding: 3em 0;
+  }
+}

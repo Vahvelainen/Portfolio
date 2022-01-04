@@ -4,6 +4,7 @@ export default class extends AbstractView {
   constructor() {
     super();
     this.setTitle("Work by Leevi Vahvelainen");
+    $("#app").attr('class', 'work');
   }
 
   async getHtml() {

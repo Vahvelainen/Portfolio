@@ -1,0 +1,9 @@
+.bio {
+  display: flex;
+  background-color: wheat;
+  img {
+    max-height: 20em;
+    max-width: 40%;
+    object-fit: contain;
+  }
+}

@@ -1,11 +1,13 @@
+@import 'dashboard';
+@import 'work';
+@import 'bio';
+@import 'history';
+
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
   font-size: 18px;
   min-height: 100%;
-  p {
-    color: chocolate;
-  }
 }
 
 nav {
