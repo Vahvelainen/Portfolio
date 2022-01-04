@@ -4,10 +4,10 @@ export default class extends AbstractView {
   constructor() {
     super();
     this.setTitle("Leevi Vahvelainen Portfolio");
-    $("#app").attr('class', 'dashboard');
   }
-
+  
   async getHtml() {
+    $("#app").attr('class', 'dashboard');
     return "/static/views/Dashboard.html";
   }
 }

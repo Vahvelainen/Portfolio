@@ -32,6 +32,8 @@ const router = async () => {
   const view = new match.route.view();
   
   //Load & render content
+  //for the sake of viewer we empty the app before we rip the css out
+  $("#app").html('');
   $("#app").load(await view.getHtml(), function() {
     render();
   });
