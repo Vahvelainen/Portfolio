@@ -2,9 +2,9 @@
 Hello and welcome!
 
 This is source for Leevi's personal portfolio page.
-If you wonder how to build your own portfolio or other webpage, don't look here :)
+If you are wondering how to build your own portfolio or other webpage, don't look here :)
 
-The repositery was originally based on single page node express ap following this tutorial on youtube:
+The repositery was originally based on single page node express app following this tutorial on youtube:
 https://youtu.be/6BozpmSjk-Y
 
 Furthermore, stack has grown with
