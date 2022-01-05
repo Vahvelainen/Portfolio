@@ -1,7 +1,8 @@
 .work {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   background-color: rgb(245, 245, 245);
+  align-items: center;
   .work-intro {
     text-align: center;
     padding-top: 4em;
@@ -11,34 +12,82 @@
       max-width: unset;
     }
   }
-  article {
-    position: relative;
-    width: calc(100%/3);
-    overflow: hidden;
-    embed {
-      width: 100%;
-      height: 100%;
+  article, a {
+    display: flex;
+    margin-bottom: 8em;
+
+    embed, img, video {
       object-fit: cover;
+      height: 30em;
+      margin-right: 4em;
+      max-width: 60vw;
     }
     div {
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      color: white;
-      text-align: center;
-      height: 100%;
-      padding-right: 2em;
-      padding-left: 2em;
     }
-    div:hover {
+  }
+  @media all and (max-width: 500px) {
+    article {
+      flex-direction: column;
+      embed, img, video {
+        max-width: 100%;
+        height: unset;
+        min-height: 100vw;
+        max-height: 60%;
+        margin: 0 0 1em;
+      }
+      div {
+        padding: 0 1em;
+      }
+    }
+  }
+}
+
+main.dashboard {
+  .work {
+    flex-direction: row;
+    flex-wrap: wrap;
+    article, a {
+      position: relative;
+      width: calc(100%/3);
+      margin: 0;
+      overflow: hidden;
+      embed, img, video {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+      div {
+        align-items: center;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        text-align: center;
+        height: 100%;
+        padding-right: 2em;
+        padding-left: 2em;
+      }
+    }
+    div:hover, .on-scroll > div  {
       background-color: rgba(0, 0, 0, 0.40);
       transition: background-color 100ms linear;
       opacity: 1;
+    }
+
+
+    @media all and (max-width: 500px) {
+      article, a {
+        width: 50%;
+      }
+      div {
+        p:not(:last-of-type){
+          display: none;
+        }
+      }
     }
   }
 }
