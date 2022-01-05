@@ -49,6 +49,7 @@ main.dashboard {
   .work {
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 0;
     article, a {
       position: relative;
       width: calc(100%/3);
@@ -68,8 +69,10 @@ main.dashboard {
         color: white;
         text-align: center;
         height: 100%;
-        padding-right: 2em;
-        padding-left: 2em;
+        width: 100%;
+        h3, p {
+          padding: 0 2em;
+        }
       }
     }
     div:hover, .on-scroll > div  {
@@ -77,12 +80,12 @@ main.dashboard {
       transition: background-color 100ms linear;
       opacity: 1;
     }
-
-
     @media all and (max-width: 500px) {
       article, a {
         width: 50%;
       }
+    }
+    @media all and (max-width: 1200px) {
       div {
         p:not(:last-of-type){
           display: none;

@@ -14,4 +14,18 @@
   div {
     max-width: 480px;
   }
+  @media all and (max-width: 500px) {
+    flex-direction: column;
+    padding-top: 4em;
+    padding-bottom: 6em;
+    img{
+      object-fit: cover;
+      margin-right: auto;
+      margin-bottom: 2em;
+      height: 8em;
+      width: 8em;
+      min-width: unset;
+      border-radius: 9999px;
+    }
+  }
 }
