@@ -64,10 +64,8 @@ const loadArticles = () => {
   elmnts.each(function () {
     var elmnt = $(this);
     $.get(elmnt.attr("load-article"), function(data) {
-
       var media;
       var mediaType = urlFileExtension(data.media);
-
       if ( mediaType === 'jpg' || mediaType === 'png' ) {
         media = $("<img></img>").attr("src", data.media);
       } else if ( mediaType === 'mp4' ) {
@@ -75,68 +73,56 @@ const loadArticles = () => {
       } else {
         media = $("<embed></embed>").attr("src", data.media);
       }
-
       var textDivider = $("<div click-trough></div>");
       var title = $("<h3></h3>").text(data.title);
       textDivider.append(title);
-
       data.paragraphs.forEach(function (item) {
         var paragraph = $("<p></p>").text(item);
         textDivider.append(paragraph);
       });
-
       elmnt.append(media, textDivider);
-
     });
   });
   elmnts.removeAttr("load-article");
 };
 
+const urlFileExtension = url => {
+  return url.substring(url.lastIndexOf('.')+1, url.length) || url;
+};
 
 //Thingies for dashboard .work section
 
-
-//Scroll anti-throthling
-//Reference: http://www.html5rocks.com/en/tutorials/speed/animations/
+//Scroll follow anti-throthling
 let ticking = false;
-
-document.addEventListener('scroll', function(e) {
-
+document.addEventListener('scroll', function() {
   if (!ticking) {
-    window.requestAnimationFrame(function() {
-      setOnScrollClass();
+    setOnScrollClass();
+    setTimeout(() => {
       ticking = false;
-    });
-
+    }, 80);
     ticking = true;
   }
 });
 
 function setOnScrollClass() {
   var elemnts = $('section.work > a');
-
   if (elemnts.length == 0) {
     return;
   }
-
   var top = elemnts[0].getBoundingClientRect().top;
   var bottom = elemnts[elemnts.length-1].getBoundingClientRect().bottom;
   var height = bottom - top;
-
   var relativeScroll = - (top - innerHeight / 2 ) / height;
   var i = Math.round( relativeScroll * elemnts.length)
-  
- elemnts.removeClass('on-scroll');
- if ( i >= 0 && i <= elemnts.length - 1 ) {
-  var myEl = elemnts[i];
-  myEl.classList.add('on-scroll');
- }
-
+  elemnts.removeClass('on-scroll');
+  if ( i >= 0 && i <= elemnts.length - 1 ) {
+    elemnts[i].classList.add('on-scroll');
+  }
 };
 
 window.addEventListener('resize', setSquare);
-
-function setSquare() {
+function setSquare() { 
+  //css is so powerfull right they said
   $(".square").each( function () {
     $(this).height($(this).width());
   });
@@ -144,13 +130,11 @@ function setSquare() {
 
 const setClickTrough = () => {
   $('[click-trough]').each( function () {
-    $(this).click( clickTrough($this) );
+    $(this).click(
+      $(this).parents().find('a').click()
+    )
   });
 };
-
-const clickTrough = elem => {
-  elem.parents().find('a').click();
-}
 
 //Browser history navigation
 const navigateTo = url => {
@@ -167,10 +151,5 @@ document.addEventListener("DOMContentLoaded", () => {
       navigateTo(e.target.href);
     }
   });
-
   router();
 });
-
-const urlFileExtension = url => {
-  return url.substring(url.lastIndexOf('.')+1, url.length) || url;
-};
