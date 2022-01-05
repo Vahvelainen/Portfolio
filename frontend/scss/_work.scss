@@ -75,7 +75,7 @@ main.dashboard {
         }
       }
     }
-    div:hover, .on-scroll > div  {
+    a > div:hover, .on-scroll > div  {
       background-color: rgba(0, 0, 0, 0.40);
       transition: background-color 100ms linear;
       opacity: 1;
