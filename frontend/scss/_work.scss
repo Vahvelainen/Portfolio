@@ -75,14 +75,21 @@ main.dashboard {
         }
       }
     }
-    a > div:hover, .on-scroll > div  {
-      background-color: rgba(0, 0, 0, 0.40);
-      transition: background-color 100ms linear;
-      opacity: 1;
+    @media all and (min-width: 501px) {
+      a > div:hover {
+        background-color: rgba(0, 0, 0, 0.40);
+        transition: background-color 100ms linear;
+        opacity: 1;
+      }
     }
     @media all and (max-width: 500px) {
       article, a {
         width: 50%;
+      }
+      .on-scroll > div  {
+        background-color: rgba(0, 0, 0, 0.40);
+        transition: background-color 100ms linear;
+        opacity: 1;
       }
     }
     @media all and (max-width: 1200px) {
