@@ -96,11 +96,13 @@ const urlFileExtension = url => {
 let ticking = false;
 document.addEventListener('scroll', function() {
   if (!ticking) {
-    setOnScrollClass();
-    setTimeout(() => {
-      ticking = false;
-    }, 80);
-    ticking = true;
+    window.requestAnimationFrame(function() {
+      setOnScrollClass();
+      setTimeout(() => {
+        ticking = false;
+      }, 80);
+      ticking = true;
+    });
   }
 });
 
