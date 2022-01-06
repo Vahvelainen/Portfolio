@@ -101,8 +101,8 @@ document.addEventListener('scroll', function() {
       setTimeout(() => {
         ticking = false;
       }, 80);
-      ticking = true;
     });
+    ticking = true;
   }
 });
 
