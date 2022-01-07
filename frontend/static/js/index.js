@@ -46,6 +46,7 @@ const render = () => {
   loadArticles();
   setSquare();
   setClickTrough();
+  scrollToHashLink();
   //future render stuff here
 }
 
@@ -81,6 +82,7 @@ const loadArticles = () => {
         textDivider.append(paragraph);
       });
       elmnt.append(media, textDivider);
+      render();
     });
   });
   elmnts.removeAttr("load-article");
@@ -88,6 +90,14 @@ const loadArticles = () => {
 
 const urlFileExtension = url => {
   return url.substring(url.lastIndexOf('.')+1, url.length) || url;
+};
+
+const scrollToHashLink = () => {
+  var url_string = window.location.href;
+  var elemId = url_string.split('#')[1];
+  if (elemId){
+    $('#'+elemId)[0].scrollIntoView();
+  }
 };
 
 //Thingies for dashboard .work section
