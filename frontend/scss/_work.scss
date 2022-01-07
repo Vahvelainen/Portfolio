@@ -8,19 +8,22 @@
     padding-top: 4em;
     padding-bottom: 2em;
     width: 100%;
-    p {
-      max-width: unset;
-    }
   }
   article, a {
     display: flex;
     margin-bottom: 8em;
-
+    
     embed, img, video {
       object-fit: cover;
       height: 30em;
       margin-right: 4em;
       max-width: 60vw;
+    }
+    h3 {
+      font-weight: 700;
+    }
+    p {
+      max-width: 420px;
     }
     div {
       display: flex;
@@ -28,7 +31,7 @@
       justify-content: center;
     }
   }
-  @media all and (max-width: 500px) {
+  @media all and (max-width: 700px) {
     article {
       flex-direction: column;
       embed, img, video {
@@ -36,7 +39,7 @@
         height: unset;
         min-height: 100vw;
         max-height: 60%;
-        margin: 0 0 1em;
+        margin: 0 0 3em;
       }
       div {
         padding: 0 1em;
@@ -72,6 +75,7 @@ main.dashboard {
         width: 100%;
         h3, p {
           padding: 0 2em;
+          font-weight: 500;
         }
       }
     }
