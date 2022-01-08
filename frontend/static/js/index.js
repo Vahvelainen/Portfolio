@@ -1,14 +1,14 @@
-import Dashboard from "./views/Dashboard.js";
-import Work from "./views/Work.js";
-import Bio from "./views/Bio.js";
-import History from "./views/History.js";
+import Dashboard from './views/Dashboard.js';
+import Work from './views/Work.js';
+import Bio from './views/Bio.js';
+import History from './views/History.js';
 
 const router = async () => {
   const routes = [
-    { path: "/", view: Dashboard },
-    { path: "/work", view: Work },
-    { path: "/bio", view: Bio },
-    { path: "/history", view: History }
+    { path: '/', view: Dashboard },
+    { path: '/work', view: Work },
+    { path: '/bio', view: Bio },
+    { path: '/history', view: History }
   ];
   
   // Test each route for potential match
@@ -33,8 +33,8 @@ const router = async () => {
   
   //Load & render content
   //for the sake of viewer we empty the app before we rip the css out
-  $("#app").html('');
-  $("#app").load(await view.getHtml(), function() {
+  $('#app').html('');
+  $('#app').load(await view.getHtml(), function() {
     render();
   });
 
@@ -51,41 +51,41 @@ const render = () => {
 }
 
 const includeHTML = () => {
-  var elmnts = $("[include-html]")
+  var elmnts = $('[include-html]')
   elmnts.each(function() {
-    $(this).load($(this).attr("include-html"), function() {
+    $(this).load($(this).attr('include-html'), function() {
       render();
     });
   });
-  elmnts.removeAttr("include-html");
+  elmnts.removeAttr('include-html');
 };
 
 const loadArticles = () => {
-  var elmnts = $("[load-article]")
+  var elmnts = $('[load-article]')
   elmnts.each(function () {
     var elmnt = $(this);
-    $.get(elmnt.attr("load-article"), function(data) {
+    $.get(elmnt.attr('load-article'), function(data) {
       var media;
       var mediaType = urlFileExtension(data.media);
       if ( mediaType === 'jpg' || mediaType === 'png' ) {
-        media = $("<img></img>").attr("src", data.media);
+        media = $('<img></img>').attr('src', data.media);
       } else if ( mediaType === 'mp4' ) {
-        media = $("<video autoplay muted loop></video>").attr("src", data.media);
+        media = $('<video autoplay muted loop></video>').attr('src', data.media);
       } else {
-        media = $("<embed></embed>").attr("src", data.media);
+        media = $('<embed></embed>').attr('src', data.media);
       }
-      var textDivider = $("<div click-trough></div>");
-      var title = $("<h3></h3>").text(data.title);
+      var textDivider = $('<div click-trough></div>');
+      var title = $('<h3></h3>').text(data.title);
       textDivider.append(title);
       data.paragraphs.forEach(function (item) {
-        var paragraph = $("<p></p>").text(item);
+        var paragraph = $('<p></p>').text(item);
         textDivider.append(paragraph);
       });
       elmnt.append(media, textDivider);
       render();
     });
   });
-  elmnts.removeAttr("load-article");
+  elmnts.removeAttr('load-article');
 };
 
 const urlFileExtension = url => {
@@ -135,7 +135,7 @@ function setOnScrollClass() {
 window.addEventListener('resize', setSquare);
 function setSquare() { 
   //css is so powerfull right they said
-  $(".square").each( function () {
+  $('.square').each( function () {
     $(this).height($(this).width());
   });
 };
@@ -154,11 +154,11 @@ const navigateTo = url => {
   router();
 };
 
-window.addEventListener("popstate", router);
+window.addEventListener('popstate', router);
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.body.addEventListener("click", e => {
-    if (e.target.matches("[data-link]")) {
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.addEventListener('click', e => {
+    if (e.target.matches('[data-link]')) {
       e.preventDefault();
       navigateTo(e.target.href);
     }

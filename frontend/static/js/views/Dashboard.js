@@ -1,13 +1,13 @@
-import AbstractView from "./AbstractView.js";
+import AbstractView from './AbstractView.js';
 
 export default class extends AbstractView {
   constructor() {
     super();
-    this.setTitle("Leevi Vahvelainen Portfolio");
+    this.setTitle('Leevi Vahvelainen Portfolio');
   }
   
   async getHtml() {
-    $("#app").attr('class', 'dashboard');
-    return "/static/views/Dashboard.html";
+    $('#app').attr('class', 'dashboard');
+    return '/static/views/Dashboard.html';
   }
 }
