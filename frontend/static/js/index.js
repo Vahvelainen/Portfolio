@@ -37,7 +37,6 @@ const router = async () => {
   $('#app').load(await view.getHtml(), function() {
     render();
   });
-
 };
 
 //Not sure if want to keep this here 
@@ -51,7 +50,7 @@ const render = () => {
 }
 
 const includeHTML = () => {
-  var elmnts = $('[include-html]')
+  const elmnts = $('[include-html]')
   elmnts.each(function() {
     $(this).load($(this).attr('include-html'), function() {
       render();
@@ -61,12 +60,12 @@ const includeHTML = () => {
 };
 
 const loadArticles = () => {
-  var elmnts = $('[load-article]')
+  const elmnts = $('[load-article]')
   elmnts.each(function () {
-    var elmnt = $(this);
+    const elmnt = $(this);
     $.get(elmnt.attr('load-article'), function(data) {
-      var media;
-      var mediaType = urlFileExtension(data.media);
+      let media;
+      const mediaType = urlFileExtension(data.media);
       if ( mediaType === 'jpg' || mediaType === 'png' ) {
         media = $('<img></img>').attr('src', data.media);
       } else if ( mediaType === 'mp4' ) {
@@ -74,11 +73,11 @@ const loadArticles = () => {
       } else {
         media = $('<embed></embed>').attr('src', data.media);
       }
-      var textDivider = $('<div click-trough></div>');
-      var title = $('<h3></h3>').text(data.title);
+      const textDivider = $('<div click-trough></div>');
+      const title = $('<h3></h3>').text(data.title);
       textDivider.append(title);
       data.paragraphs.forEach(function (item) {
-        var paragraph = $('<p></p>').text(item);
+        const paragraph = $('<p></p>').text(item);
         textDivider.append(paragraph);
       });
       elmnt.append(media, textDivider);
@@ -93,8 +92,8 @@ const urlFileExtension = url => {
 };
 
 const scrollToHashLink = () => {
-  var url_string = window.location.href;
-  var elemId = url_string.split('#')[1];
+  const url_string = window.location.href;
+  const elemId = url_string.split('#')[1];
   if (elemId){
     $('#'+elemId)[0].scrollIntoView();
   }
@@ -116,29 +115,29 @@ document.addEventListener('scroll', function() {
   }
 });
 
-function setOnScrollClass() {
-  var elemnts = $('section.work > a');
+const setOnScrollClass = () => {
+  const elemnts = $('section.work > a');
   if (elemnts.length == 0) {
     return;
   }
-  var top = elemnts[0].getBoundingClientRect().top;
-  var bottom = elemnts[elemnts.length-1].getBoundingClientRect().bottom;
-  var height = bottom - top;
-  var relativeScroll = - (top - innerHeight / 2 ) / height;
-  var i = Math.round( relativeScroll * elemnts.length)
+  const top = elemnts[0].getBoundingClientRect().top;
+  const bottom = elemnts[elemnts.length-1].getBoundingClientRect().bottom;
+  const height = bottom - top;
+  const relativeScroll = - (top - innerHeight / 2 ) / height;
+  const i = Math.round( relativeScroll * elemnts.length)
   elemnts.removeClass('on-scroll');
   if ( i >= 0 && i <= elemnts.length - 1 ) {
     elemnts[i].classList.add('on-scroll');
   }
 };
 
-window.addEventListener('resize', setSquare);
-function setSquare() { 
+const setSquare = () => { 
   //css is so powerfull right they said
   $('.square').each( function () {
     $(this).height($(this).width());
   });
 };
+window.addEventListener('resize', setSquare);
 
 const setClickTrough = () => {
   $('[click-trough]').each( function () {
