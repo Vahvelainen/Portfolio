@@ -27,11 +27,14 @@ Server is running on:
 - Ubuntu 20.4.
 - Nginx
 - PM2 (runnign as index 1 "server")
+- letsencrypt
 - On digitalocean
 
 Render functions:
+<!--
 - <elem include-html='url.html'></elem> will include html from address to the element
 - <elem load-article='url.JSON'></elem> will read JSON and put certain data into the element in certain manner
 - <elem class='square'></elem> will keep the element height same as width because css just isnt there yet
+-->
 
 Updated 4.1.2022
