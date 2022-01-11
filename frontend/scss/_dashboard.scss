@@ -1,17 +1,17 @@
 main.dashboard{
   .intro {
-    background: url(/static/media/cover.jpg);
+    background-image: url('/static/media/cover.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
+    text-align: center;
     flex-direction: column;
     color: white;
     padding-top: 8em;
     padding-bottom: 8em;
     p {
-      padding-left: 0em;
-      max-width: 400px;
+      max-width: 480px;
     }
   }
 }
