@@ -35,9 +35,9 @@ Server is running on:
 
 Render functions (HTML attributes):
 
-- 'include-html='url.html' will include html from address to the element
-- 'url.JSON' will read JSON and put certain data into the element in certain manner
-- 'square' will keep the element height same as width because css just isnt there yet
+- include-html='url.html' will include html from address to the element
+- load-article='url.json' will read JSON and put certain data into the element in certain manner
+- class='square' will keep the element height same as width because css just isnt there yet
 
 
 Updated 4.1.2022
