@@ -4,8 +4,11 @@ Hello and welcome!
 This is source for Leevi's personal portfolio page.
 If you are wondering how to build your own portfolio or other webpage, don't look here :)
 
-The repository was originally based on single page node express app following this tutorial on youtube:
+The repository was originally based on single page node express app following this tutorial
+youtube:
 https://youtu.be/6BozpmSjk-Y
+git:
+https://github.com/dcode-youtube/single-page-app-vanilla-js
 
 Furthermore, stack has grown with
 - separate html files with few render functions
@@ -30,11 +33,11 @@ Server is running on:
 - letsencrypt
 - On digitalocean
 
-Render functions:
-<!--
-- <elem include-html='url.html'></elem> will include html from address to the element
-- <elem load-article='url.JSON'></elem> will read JSON and put certain data into the element in certain manner
-- <elem class='square'></elem> will keep the element height same as width because css just isnt there yet
--->
+Render functions (HTML attributes):
+
+- 'include-html='url.html' will include html from address to the element
+- 'url.JSON' will read JSON and put certain data into the element in certain manner
+- 'square' will keep the element height same as width because css just isnt there yet
+
 
 Updated 4.1.2022
