@@ -77,6 +77,9 @@ main.dashboard {
           padding: 0 2em;
           font-weight: 500;
         }
+        a {
+          display: none;
+        }
       }
     }
     @media all and (min-width: 501px) {

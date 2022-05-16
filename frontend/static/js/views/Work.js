@@ -33,6 +33,10 @@ export function loadArticles () {
         const paragraph = $('<p></p>').text(item);
         textDivider.append(paragraph);
       });
+      if (data.full_page) {
+        const readMore = $('<a>Read More</a>').attr('href', data.full_page);
+        textDivider.append(readMore); 
+      }
       elmnt.append(media, textDivider);
       setWorkFunctions();
     });
