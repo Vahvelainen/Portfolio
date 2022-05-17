@@ -21,6 +21,7 @@ export function loadArticles () {
       const mediaType = urlFileExtension(data.media);
       if ( mediaType === 'jpg' || mediaType === 'png' ) {
         media = $('<img></img>').attr('src', data.media);
+        media.attr('data-fancybox', 'wrk');
       } else if ( mediaType === 'mp4' ) {
         media = $('<video autoplay muted loop></video>').attr('src', data.media);
       } else {
