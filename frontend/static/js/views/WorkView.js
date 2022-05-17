@@ -8,7 +8,7 @@ export default class extends AbstractView {
     }
 
     async getHtml() {
-        $('#app').attr('class', 'work');
+        $('#app').attr('class', 'work-view');
         console.log(this.postId);
         return `/static/views/works/${this.postId}.html`;
     }
