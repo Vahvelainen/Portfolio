@@ -1,0 +1,10 @@
+{
+  "title": "aMapper",
+  "media": "static/media/aMapper.png",
+  "full_page" : "/work/amapper",
+  "paragraphs": [
+    "Browser based Ai Affinity mapper tool",
+    "A weekend project",
+    "2022"
+  ]
+}
