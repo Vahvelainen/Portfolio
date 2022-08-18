@@ -79,9 +79,11 @@ const includeHTML = () => {
 const scrollToHashLink = () => {
   const url_string = window.location.href;
   const elemId = url_string.split('#')[1];
-  if (elemId){
-    $('#'+elemId)[0].scrollIntoView();
-  }
+  setTimeout(() => {
+    if (elemId){
+      $('#'+elemId)[0].scrollIntoView();
+    }
+  }, 10)
 };
 
 window.addEventListener('popstate', router);
