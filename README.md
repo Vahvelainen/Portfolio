@@ -1,4 +1,4 @@
-# Portfolio
+# Portfolio (Replaced by portfolio 2.0)
 Hello and welcome!
 
 This is source for Leevi's personal portfolio page.
